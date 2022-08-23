@@ -1,0 +1,16 @@
+For single container the setup looks like
+1. Push code to github
+2. Travis automatically pull repo
+3. Travis builds an image, tests code
+4. Travis pushes code to AWS EB
+5. EB builds image and deploys it
+
+
+For multicontainer the setup looks like
+1. Push code to github
+2. Travis automatically pull repo
+3. Travis builds a test image, tests code
+4. Travis builds prod images
+5. Travis pushes built prod images to Docker Hub
+6. Travis pushes project to AWS EB
+7. EB pull images from DockerHub and deploys it
