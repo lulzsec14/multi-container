@@ -1,4 +1,5 @@
 sudo: required
+
 services:
   - docker
 
@@ -7,6 +8,8 @@ before_install:
 
 script:
   - docker run -e CI=true lulzsec14/react-test npm test
+
+language: generic
 
 after_success:
   - docker build -t lulzsec14/multi-client ./client
@@ -20,6 +23,3 @@ after_success:
   - docker push lulzsec14/multi-nginx
   - docker push lulzsec14/multi-server
   - docker push lulzsec14/multi-worker
-
-
-language: generic
