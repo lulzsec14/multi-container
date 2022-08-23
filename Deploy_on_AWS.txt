@@ -14,3 +14,18 @@ For multicontainer the setup looks like
 5. Travis pushes built prod images to Docker Hub
 6. Travis pushes project to AWS EB
 7. EB pull images from DockerHub and deploys it
+
+
+Travis Workflow
+1. Specify Docker as a dependency
+2. Build test version of React project
+3. Run tests
+4. Build prod version of all projects
+5. Push all to docker Hub
+6. Tell Elastic Beanstalk to update
+
+Travis.yml File
+1. More Optons -> Settings
+2. Environment variables
+|
+------> Add DOCKER_ID as a variable -> Add DOCKER_PASSWORD as a variable 
